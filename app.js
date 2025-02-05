@@ -1,3 +1,5 @@
+friendList = [];
+
 function addFriend(){
     
 }
