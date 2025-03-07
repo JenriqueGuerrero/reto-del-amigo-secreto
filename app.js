@@ -10,22 +10,24 @@ function addFriend (){
 
     if(getFriend !== "" && !friend.includes(getFriend)){
         friend.push(getFriend);
-//Verificar entradas        
-        console.log(friend)
-        console.log(getFriend)
+//Verificar entradas;        
+        console.log(friend);
+        console.log(getFriend);
+//Crear lista de amigos li;
+        updateFriendList();
     } else {
         alert("Por favor, ingrese un nombre válido o que no esté repetido");
     }
-    clearInput()
+    clearInput();
 };
 
 function randomizeFriend() {
     if (friend.length - selectedFriends.length > 0) {
-// Filtrar amigos no seleccionados  
+// Filtrar amigos no seleccionados;
         let availableFriends = friend.filter(f => !selectedFriends.includes(f));
         let randomIndex = Math.floor(Math.random() * availableFriends.length);
         let selectedFriend = availableFriends[randomIndex];
-// Agregar el nombre a la lista de seleccionados
+// Agregar el nombre a la lista de seleccionados;
         selectedFriends.push(selectedFriend);
         document.getElementById('result').innerHTML = `El amigo seleccionado es: <strong>${selectedFriend}</strong>`;
 
@@ -34,7 +36,7 @@ function randomizeFriend() {
     }
 }
 
-//Lista de amigos
+//Lista de amigos;
 function updateFriendList() {
     let friendList = document.getElementById('friendList');
     friendList.innerHTML = "";  
@@ -46,12 +48,12 @@ function updateFriendList() {
     });
 }
 
-// Limpiar la entrada
+// Limpiar la entrada;
 function clearInput (){
     document.getElementById('nameFriend').value = '';
 }
 
-// Vaciar la lista de seleccionados
+// Vaciar la lista de seleccionados;
 function resetSelection() {
     selectedFriends.length = 0;
     document.getElementById('result').innerHTML = "Sorteo reiniciado.";
